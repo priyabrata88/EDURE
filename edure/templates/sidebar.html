@@ -1,0 +1,35 @@
+{% load thumbnail %}
+    <aside data-mcs-theme="minimal-dark" style="background-image: url({{ MEDIA_URL }}build/images/backgrounds/11.jpg)" class="main-sidebar mCustomScrollbar">
+        {% if request.user.is_authenticated %}
+        <div class="user">
+            <a href="{% url 'profile' %}"><div id="esp-user-profile" data-percent="65" style="height: 130px; width: 130px; line-height: 100px; padding: 15px;" class="easy-pie-chart"><img src="{% if request.profile.pict %}{{ request.profile.pict|thumbnail_url:'foto' }}{% else %}{{ MEDIA_URL }}build/images/profil_pict.png{% endif %}" alt="" class="avatar img-circle"><span class="status bg-success"></span></div></a>
+            <h4 class="fs-16 text-muted mt-15 mb-5 fw-300">{{ request.user.first_name }}</h4>
+            <p class="mb-0 text-muted">Studying</p>
+            <p class="mb-0 text-muted">Student/Professional</p>
+        </div>
+        <ul class="list-unstyled navigation mb-0">
+            <li class="panel"><a href="/"{% if '/preferences' in request.META.PATH_INFO %} class="active"{% endif %}><i class="ti-layout-grid4-alt"></i><span class="sidebar-title">Preferences </span></a></li>
+            <li class="panel"><a href="/"{% if '/topics_interest' in request.META.PATH_INFO %} class="active"{% endif %}><i class="ti-view-list"></i><span class="sidebar-title">Topics Of Interest </span></a></li>
+            <li class="panel"><a href="/"{% if '/conversation_title' in request.META.PATH_INFO %} class="active"{% endif %}><i class="ti-info"></i><span class="sidebar-title">Conversation Title </span></a></li>
+            <li class="panel"><a href="/"{% if '/create_notes' in request.META.PATH_INFO %} class="active"{% endif %}><i class="ti-hummer"></i><span class="sidebar-title">Create Notes </span></a></li>
+            <li class="panel"><a href="{% url 'file_manager' %}"{% if '/file_manager' in request.META.PATH_INFO %} class="active"{% endif %}><i class="ti-harddrives"></i><span class="sidebar-title">File Manager </span></a></li>
+
+            <li class="sidebar-category">Classes</li>
+            <li class="panel"><a href="/"{% if '/manage_classes' in request.META.PATH_INFO %} class="active"{% endif %}><i class="ti-user"></i><span class="sidebar-title">Manage Classes </span></a></li>
+            <li class="panel"><a href="/"{% if '/create_class' in request.META.PATH_INFO %} class="active"{% endif %}><i class="ti-dribbble"></i><span class="sidebar-title">Create a Class </span></a></li>
+            <li class="panel"><a href="/"{% if '/join_class' in request.META.PATH_INFO %} class="active"{% endif %}><i class="ti-agenda"></i><span class="sidebar-title">Join a Class </span></a></li>
+
+            <li class="sidebar-category">Groups</li>
+            <li class="panel"><a href="/"{% if '/manage_groups' in request.META.PATH_INFO %} class="active"{% endif %}><i class="ti-user"></i><span class="sidebar-title">Manage Groups </span></a></li>
+            <li class="panel"><a href="/"{% if '/create_group' in request.META.PATH_INFO %} class="active"{% endif %}><i class="ti-dribbble"></i><span class="sidebar-title">Create a Group </span></a></li>
+            <li class="panel"><a href="/"{% if '/join_group' in request.META.PATH_INFO %} class="active"{% endif %}><i class="ti-agenda"></i><span class="sidebar-title">Join a Group </span></a></li>
+
+        </ul>
+        {% else %}
+        <ul class="list-unstyled navigation mb-0">
+            <li class="panel"><a href="/"{% if '/login' in request.META.PATH_INFO %} class="active"{% endif %}><span class="sidebar-title">Signin </span></a></li>
+            <li class="panel"><a href="/"{% if '/register' in request.META.PATH_INFO %} class="active"{% endif %}><span class="sidebar-title">Signup </span></a></li>
+        </ul>
+
+        {% endif %}
+    </aside>

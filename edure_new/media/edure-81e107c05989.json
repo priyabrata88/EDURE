@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "virtual-anchor-189300",
+  "private_key_id": "81e107c0598967e08821e01c64ef75dff378a132",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDHQuNSTn15CMeb\nDT2Cj2bN58rd65KanX4ZVq7WCp4kUlriBa6fst/WJAN6A67c3JXT0261NBQm/TQ5\nvxY3Nc7W31n/AZJyScgyn2ono4V7zR7fks5CHugDcZOSyV3uKxY6Is5y9zul7lL+\nMbsKf0OoSiJjj7RCel94CI1BB6YptW1iBls8LtDHJ4INBpVah8j9Ejuts9ejR3Sh\nsZkoRwca2Azfvq8QlXIhVvy2Qsu5qixBmgAoaYKf+TcElkFrRd95eRk6Zz342pJg\navV5QctC6pvSORl4Sim49v3wSttVvL8wxqDopWFX/6c/J5LyrvKxTt/TQ7sHsj84\nwhXk1I+nAgMBAAECggEALA2MplC2CsE3J/9oXuoHR3R8dE21jrtM+psgci/MwKj4\ncMnizmnEdNpnbl1MFoYqFbfD3QnTfr8yAaZOagxaW0Tr56XYU64eNZrq5DKRu0oh\nDjqtoQ6mKsS8ZJJiUtpxwo6ZZ+9i349uB8bE3FBAi/8/1RUbPCtD2gzB9eOUB9ox\nfqdTDxEZ3Xp9kcXPCkNvxRHXlJ4eVlZgFqpuoP6hiJxfBl1nS0TekA1cWPV2Fr+d\n4xQPGzwZEd59YUg72uTGUG0Ciq+Q4Tz69WFQWPAL/3C2X6noxhAa/21Rz54Eyhuf\n0DrCqNt8/vdOKg5K33CvzGeJlvc3XTIzHrEiEIApoQKBgQDuXNCEzWx05eYB50nb\ndoUanJZ8fLTe1jWrHWY5qBoawbbSC//LuN/9EVqqehkoQQx45SbCzPApHwwcRjCy\nXR9aIzy0P8aD0aqDaJHqNbKcUx4L/mFwFgFlPFGQqaQPEI7LYwHUabxBkvAwA4oV\nyertMDgsQzVtIf7QQD6MMpiR8QKBgQDWAWWnZFl/QoPc5xzz16JQ778/OjlrmnjF\nEEX6mwbxso1ZqdiMgeF9hu6M45fsysMun1ysc789uqzEzszLO3ELERfSMaDSu8ht\nxXhLsl6hmN/ykg6sgwIyurpcI3n3L1n73P0p3P5CIIsAi/I2AzpO828LXdzlqb3R\nKC3eBGOjFwKBgQCc8mAaEWioT/fyqOfoqVFbBF/R+Arf7wvHb8QvkpAdrg9CnsP+\nz+wsJZEdTufhqXMc50VuXqKDcP34X/8QcmCCaVE/Hf8ILLWpcOEi5diFNfVC0Gw3\n8UVZ8y2BozFy+eQL51T9F+HtC2M7Ohlh32Hgay+RdW9oPEobtTF5/paXAQKBgEaV\nz2GWx64h0jxaPkJvLSpk6T+BhM7o9EyLQYmW+INf0R9x1esCK82rY6M0rjd76UTH\na1m2E63YlIOVchbWVELCMIkztUfMiB8ssrDE9FF4iuUHJ6/exirVTAJ38RKGm7dm\n/FmCepp1AWP8xLbr+Z9wy3+ERge6JNGH3xkLeZGhAoGAHRMWlj80X4Ktb7ru8aAb\nVOIMf+XVi1K6cnxIFAmUh/V8oFlkwUiI4ps0Ui5P2HlcSHCyQzwHXX+t5ghieERM\nn2Ygb1m8PHvdcTTsRX9o8h+44tTM+aZckTS/XM522qRGTU3LuYP43RPfwLRRvzZV\nLzzoTHG6Im7OuK76lxjJ7Hk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "edure-413@virtual-anchor-189300.iam.gserviceaccount.com",
+  "client_id": "110154974500020103098",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/edure-413%40virtual-anchor-189300.iam.gserviceaccount.com"
+}

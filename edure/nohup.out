@@ -1,0 +1,177 @@
+[2017-12-14 16:01:46 +0000] [8591] [INFO] Starting gunicorn 19.7.1
+[2017-12-14 16:01:46 +0000] [8591] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (8591)
+[2017-12-14 16:01:46 +0000] [8591] [INFO] Using worker: sync
+[2017-12-14 16:01:46 +0000] [8596] [INFO] Booting worker with pid: 8596
+[2017-12-14 16:01:47 +0000] [8599] [INFO] Booting worker with pid: 8599
+[2017-12-14 23:23:07 +0000] [10875] [INFO] Starting gunicorn 19.7.1
+[2017-12-14 23:23:07 +0000] [10875] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (10875)
+[2017-12-14 23:23:07 +0000] [10875] [INFO] Using worker: sync
+[2017-12-14 23:23:07 +0000] [10880] [INFO] Booting worker with pid: 10880
+[2017-12-14 23:23:07 +0000] [10881] [INFO] Booting worker with pid: 10881
+[2017-12-15 08:32:52 +0000] [11891] [INFO] Starting gunicorn 19.7.1
+[2017-12-15 08:32:52 +0000] [11891] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (11891)
+[2017-12-15 08:32:52 +0000] [11891] [INFO] Using worker: sync
+[2017-12-15 08:32:52 +0000] [11896] [INFO] Booting worker with pid: 11896
+[2017-12-15 08:32:52 +0000] [11897] [INFO] Booting worker with pid: 11897
+[2017-12-15 15:35:06,850: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2017-12-15 15:35:06,859: INFO/MainProcess] mingle: searching for neighbors
+[2017-12-15 15:35:07,865: INFO/MainProcess] mingle: all alone
+[2017-12-15 15:35:07,874: WARNING/MainProcess] celery@ip-172-31-82-152 ready.
+[2017-12-15 15:36:35,497: INFO/MainProcess] Received task: service.tasks.email_send[021ea0fc-2639-4566-a910-806bd25dc45e]
+[2017-12-15 15:36:35,498: WARNING/Worker-1] subject: EduRe email verification
+[2017-12-15 15:36:35,498: WARNING/Worker-1] to: hadi@tokowebku.com
+[2017-12-15 15:36:36,296: WARNING/Worker-1] (534, '5.7.14 <https://accounts.google.com/signin/continue?sarp=1&scc=1&plt=AKgnsbuW\n5.7.14 OeaecEG7frFDDDGCvCsOwcs6vArqvviaHjR3TAd69FQ_5KMMraFzBZvc7DUg4VvGbP6fI3\n5.7.14 WqfKY72iHZDFbA6xQW-d97QrzfBw4v40SzGdoVrMD6fdCnRzMBhseKmu7xTVQfWn9pkMFO\n5.7.14 VNp3LaWwtvxqNdc3kj-y2CyNjILURg6QMa8PsAnvKdNV_WthrKeSDCXewvCfKewAjShzA6\n5.7.14 kMR0FwitwrO18WnkfaH6Xlo4uNqW8> Please log in via your web browser and\n5.7.14 then try again.\n5.7.14  Learn more at\n5.7.14  https://support.google.com/mail/answer/78754 d6sm3846561qte.4 - gsmtp')
+[2017-12-15 15:36:36,352: INFO/MainProcess] Task service.tasks.email_send[021ea0fc-2639-4566-a910-806bd25dc45e] succeeded in 0.854473792002s: True
+[2017-12-15 10:35:09 +0000] [11891] [INFO] Handling signal: hup
+[2017-12-15 10:35:09 +0000] [11891] [INFO] Hang up: Master
+
+Restarting celery worker (manage.py celery worker --loglevel=info)
+[2017-12-15 10:35:09 +0000] [14513] [INFO] Booting worker with pid: 14513
+ 
+ -------------- celery@ip-172-31-82-152 v3.1.17 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-4.4.0-1043-aws-x86_64-with-Ubuntu-16.04-xenial
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         default:0x7f7ca81b8ed0 (djcelery.loaders.DjangoLoader)
+- ** ---------- .> transport:   amqp://guest:**@localhost:5672//
+- ** ---------- .> results:     database
+- *** --- * --- .> concurrency: 1 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . service.tasks.email_send
+
+[2017-12-15 10:35:09 +0000] [14514] [INFO] Booting worker with pid: 14514
+[2017-12-15 10:35:09 +0000] [14515] [INFO] Booting worker with pid: 14515
+[2017-12-15 17:35:11,112: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
+[2017-12-15 17:35:11,120: INFO/MainProcess] mingle: searching for neighbors
+[2017-12-15 17:35:12,127: INFO/MainProcess] mingle: all alone
+[2017-12-15 17:35:12,136: WARNING/MainProcess] celery@ip-172-31-82-152 ready.
+[2017-12-18 10:48:44 +0000] [13893] [INFO] Booting worker with pid: 13893
+[2017-12-18 10:49:45 +0000] [13938] [INFO] Starting gunicorn 19.7.1
+[2017-12-18 10:49:45 +0000] [13938] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (13938)
+[2017-12-18 10:49:45 +0000] [13938] [INFO] Using worker: sync
+[2017-12-18 10:49:45 +0000] [13943] [INFO] Booting worker with pid: 13943
+[2017-12-18 10:49:45 +0000] [13946] [INFO] Booting worker with pid: 13946
+[2017-12-18 11:01:01 +0000] [14103] [INFO] Starting gunicorn 19.7.1
+[2017-12-18 11:01:01 +0000] [14103] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (14103)
+[2017-12-18 11:01:01 +0000] [14103] [INFO] Using worker: sync
+[2017-12-18 11:01:01 +0000] [14108] [INFO] Booting worker with pid: 14108
+[2017-12-18 11:01:01 +0000] [14111] [INFO] Booting worker with pid: 14111
+[2017-12-18 11:59:59 +0000] [14879] [INFO] Starting gunicorn 19.7.1
+[2017-12-18 11:59:59 +0000] [14879] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (14879)
+[2017-12-18 11:59:59 +0000] [14879] [INFO] Using worker: sync
+[2017-12-18 11:59:59 +0000] [14884] [INFO] Booting worker with pid: 14884
+[2017-12-18 11:59:59 +0000] [14885] [INFO] Booting worker with pid: 14885
+[2017-12-18 13:21:14 +0000] [15943] [INFO] Starting gunicorn 19.7.1
+[2017-12-18 13:21:14 +0000] [15943] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (15943)
+[2017-12-18 13:21:14 +0000] [15943] [INFO] Using worker: sync
+[2017-12-18 13:21:14 +0000] [15948] [INFO] Booting worker with pid: 15948
+[2017-12-18 13:21:14 +0000] [15951] [INFO] Booting worker with pid: 15951
+[2017-12-18 15:01:03 +0000] [17263] [INFO] Starting gunicorn 19.7.1
+[2017-12-18 15:01:03 +0000] [17263] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (17263)
+[2017-12-18 15:01:03 +0000] [17263] [INFO] Using worker: sync
+[2017-12-18 15:01:03 +0000] [17268] [INFO] Booting worker with pid: 17268
+[2017-12-18 15:01:03 +0000] [17269] [INFO] Booting worker with pid: 17269
+[2017-12-19 09:31:35 +0000] [31975] [INFO] Starting gunicorn 19.7.1
+[2017-12-19 09:31:35 +0000] [31975] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (31975)
+[2017-12-19 09:31:35 +0000] [31975] [INFO] Using worker: sync
+[2017-12-19 09:31:35 +0000] [31980] [INFO] Booting worker with pid: 31980
+[2017-12-19 09:31:35 +0000] [31983] [INFO] Booting worker with pid: 31983
+[2017-12-19 14:55:53 +0000] [3734] [INFO] Starting gunicorn 19.7.1
+[2017-12-19 14:55:53 +0000] [3734] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (3734)
+[2017-12-19 14:55:53 +0000] [3734] [INFO] Using worker: sync
+[2017-12-19 14:55:53 +0000] [3739] [INFO] Booting worker with pid: 3739
+[2017-12-19 14:55:53 +0000] [3740] [INFO] Booting worker with pid: 3740
+[2017-12-20 03:30:54 +0000] [20531] [INFO] Starting gunicorn 19.7.1
+[2017-12-20 03:30:54 +0000] [20531] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (20531)
+[2017-12-20 03:30:54 +0000] [20531] [INFO] Using worker: sync
+[2017-12-20 03:30:54 +0000] [20536] [INFO] Booting worker with pid: 20536
+[2017-12-20 03:30:54 +0000] [20537] [INFO] Booting worker with pid: 20537
+[2017-12-20 08:53:33 +0000] [25611] [INFO] Starting gunicorn 19.7.1
+[2017-12-20 08:53:33 +0000] [25611] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (25611)
+[2017-12-20 08:53:33 +0000] [25611] [INFO] Using worker: sync
+[2017-12-20 08:53:33 +0000] [25616] [INFO] Booting worker with pid: 25616
+[2017-12-20 08:53:33 +0000] [25619] [INFO] Booting worker with pid: 25619
+[2017-12-21 04:29:20 +0000] [9167] [INFO] Starting gunicorn 19.7.1
+[2017-12-21 04:29:20 +0000] [9167] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (9167)
+[2017-12-21 04:29:20 +0000] [9167] [INFO] Using worker: sync
+[2017-12-21 04:29:20 +0000] [9172] [INFO] Booting worker with pid: 9172
+[2017-12-21 04:29:20 +0000] [9173] [INFO] Booting worker with pid: 9173
+[2017-12-21 22:41:54 +0000] [24221] [INFO] Booting worker with pid: 24221
+[2017-12-21 22:41:54 +0000] [24224] [INFO] Booting worker with pid: 24224
+[2017-12-21 22:41:54 +0000] [9167] [INFO] Handling signal: hup
+[2017-12-21 22:41:54 +0000] [9167] [INFO] Hang up: Master
+[2017-12-21 22:41:54 +0000] [24227] [INFO] Booting worker with pid: 24227
+[2017-12-21 22:41:54 +0000] [24228] [INFO] Booting worker with pid: 24228
+[2017-12-22 03:45:25 +0000] [28573] [INFO] Starting gunicorn 19.7.1
+[2017-12-22 03:45:25 +0000] [28573] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (28573)
+[2017-12-22 03:45:25 +0000] [28573] [INFO] Using worker: sync
+[2017-12-22 03:45:25 +0000] [28578] [INFO] Booting worker with pid: 28578
+[2017-12-22 03:45:25 +0000] [28581] [INFO] Booting worker with pid: 28581
+[2017-12-22 03:50:26 +0000] [28660] [INFO] Booting worker with pid: 28660
+[2017-12-22 03:50:26 +0000] [28663] [INFO] Booting worker with pid: 28663
+[2017-12-22 03:50:26 +0000] [28573] [INFO] Handling signal: hup
+[2017-12-22 03:50:26 +0000] [28573] [INFO] Hang up: Master
+[2017-12-22 03:50:26 +0000] [28664] [INFO] Booting worker with pid: 28664
+[2017-12-22 03:50:26 +0000] [28665] [INFO] Booting worker with pid: 28665
+[2017-12-22 10:49:46 +0000] [2044] [INFO] Starting gunicorn 19.7.1
+[2017-12-22 10:49:46 +0000] [2044] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (2044)
+[2017-12-22 10:49:46 +0000] [2044] [INFO] Using worker: sync
+[2017-12-22 10:49:46 +0000] [2049] [INFO] Booting worker with pid: 2049
+[2017-12-22 10:49:46 +0000] [2052] [INFO] Booting worker with pid: 2052
+[2017-12-22 10:56:22 +0000] [2141] [INFO] Booting worker with pid: 2141
+[2017-12-22 10:56:22 +0000] [2144] [INFO] Booting worker with pid: 2144
+[2017-12-22 10:56:22 +0000] [2044] [INFO] Handling signal: hup
+[2017-12-22 10:56:22 +0000] [2044] [INFO] Hang up: Master
+[2017-12-22 10:56:22 +0000] [2147] [INFO] Booting worker with pid: 2147
+[2017-12-22 10:56:22 +0000] [2148] [INFO] Booting worker with pid: 2148
+[2017-12-24 01:11:24 +0000] [9040] [INFO] Starting gunicorn 19.7.1
+[2017-12-24 01:11:24 +0000] [9040] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (9040)
+[2017-12-24 01:11:24 +0000] [9040] [INFO] Using worker: sync
+[2017-12-24 01:11:24 +0000] [9045] [INFO] Booting worker with pid: 9045
+[2017-12-24 01:11:24 +0000] [9046] [INFO] Booting worker with pid: 9046
+[2017-12-24 01:51:44 +0000] [9698] [INFO] Starting gunicorn 19.7.1
+[2017-12-24 01:51:44 +0000] [9698] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (9698)
+[2017-12-24 01:51:44 +0000] [9698] [INFO] Using worker: sync
+[2017-12-24 01:51:44 +0000] [9703] [INFO] Booting worker with pid: 9703
+[2017-12-24 01:51:44 +0000] [9704] [INFO] Booting worker with pid: 9704
+[2017-12-24 02:02:32 +0000] [9905] [INFO] Starting gunicorn 19.7.1
+[2017-12-24 02:02:32 +0000] [9905] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (9905)
+[2017-12-24 02:02:32 +0000] [9905] [INFO] Using worker: sync
+[2017-12-24 02:02:32 +0000] [9910] [INFO] Booting worker with pid: 9910
+[2017-12-24 02:02:32 +0000] [9911] [INFO] Booting worker with pid: 9911
+[2017-12-24 02:55:07 +0000] [10740] [INFO] Starting gunicorn 19.7.1
+[2017-12-24 02:55:07 +0000] [10740] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (10740)
+[2017-12-24 02:55:07 +0000] [10740] [INFO] Using worker: sync
+[2017-12-24 02:55:07 +0000] [10745] [INFO] Booting worker with pid: 10745
+[2017-12-24 02:55:07 +0000] [10746] [INFO] Booting worker with pid: 10746
+[2017-12-24 02:56:06 +0000] [10795] [INFO] Starting gunicorn 19.7.1
+[2017-12-24 02:56:06 +0000] [10795] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (10795)
+[2017-12-24 02:56:06 +0000] [10795] [INFO] Using worker: sync
+[2017-12-24 02:56:06 +0000] [10800] [INFO] Booting worker with pid: 10800
+[2017-12-24 02:56:06 +0000] [10803] [INFO] Booting worker with pid: 10803
+[2017-12-24 03:01:05 +0000] [10912] [INFO] Starting gunicorn 19.7.1
+[2017-12-24 03:01:05 +0000] [10912] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (10912)
+[2017-12-24 03:01:05 +0000] [10912] [INFO] Using worker: sync
+[2017-12-24 03:01:05 +0000] [10917] [INFO] Booting worker with pid: 10917
+[2017-12-24 03:01:06 +0000] [10920] [INFO] Booting worker with pid: 10920
+[2017-12-24 07:16:59 +0000] [14938] [INFO] Starting gunicorn 19.7.1
+[2017-12-24 07:16:59 +0000] [14938] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (14938)
+[2017-12-24 07:16:59 +0000] [14938] [INFO] Using worker: sync
+[2017-12-24 07:16:59 +0000] [14943] [INFO] Booting worker with pid: 14943
+[2017-12-24 07:16:59 +0000] [14944] [INFO] Booting worker with pid: 14944
+[2017-12-24 07:17:53 +0000] [14996] [INFO] Starting gunicorn 19.7.1
+[2017-12-24 07:17:53 +0000] [14996] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (14996)
+[2017-12-24 07:17:53 +0000] [14996] [INFO] Using worker: sync
+[2017-12-24 07:17:53 +0000] [15001] [INFO] Booting worker with pid: 15001
+[2017-12-24 07:17:53 +0000] [15004] [INFO] Booting worker with pid: 15004
+[2017-12-24 07:31:22 +0000] [15228] [INFO] Starting gunicorn 19.7.1
+[2017-12-24 07:31:22 +0000] [15228] [INFO] Listening at: unix:/home/ubuntu/edure/edure.sock (15228)
+[2017-12-24 07:31:22 +0000] [15228] [INFO] Using worker: sync
+[2017-12-24 07:31:22 +0000] [15235] [INFO] Booting worker with pid: 15235
+[2017-12-24 07:31:22 +0000] [15236] [INFO] Booting worker with pid: 15236

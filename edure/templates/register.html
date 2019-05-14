@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% block js %}
+<script type="text/javascript">
+    function register() {
+        var fullname = $('input[name=fullname]').val();
+        var username = $('input[name=username_reg]').val();
+        var email = $('input[name=email]').val();
+        var phone = $('input[name=phone]').val();
+        var password = $('input[name=password_reg]').val();
+        var birthday = $('input[name=birthday]').val();
+        var gender = $('input[name=gender]').val();
+        if (fullname && username && email && password && birthday && gender && phone) {
+            $('#register').submit();
+        } else {
+            swal({
+                title: "Warning!",
+                text: "Please fill all fields",
+                type: "error",
+                confirmButtonClass: "btn-raised btn-primary",
+                confirmButtonText: "OK"
+            });
+            if (!(fullname)) {
+                $('input[name=fullname]').parent().addClass('has-error');
+            }
+            if (!(username)) {
+                $('input[name=username_reg]').parent().addClass('has-error');
+            }
+            if (!(email)) {
+                $('input[name=email]').parent().addClass('has-error');
+            }
+            if (!(phone)) {
+                $('input[name=phone]').parent().addClass('has-error');
+            }
+            if (!(password)) {
+                $('input[name=password_reg]').parent().addClass('has-error');
+            }
+            if (!(birthday)) {
+                $('input[name=birthday]').parent().addClass('has-error');
+            }
+            if (!(gender)) {
+                $('input[name=gender]').parent().addClass('has-error');
+            }
+        }
+
+    }
+    $(document).ready(function(){
+        $('input').focusin(function(){
+            $(this).parent().removeClass('has-error');
+        });
+        {% if err %}
+            sweetAlertInitialize();
+            swal({
+                title: "Warning!",
+                text: "{{ err }}",
+                type: "error",
+                confirmButtonClass: "btn-raised btn-primary",
+                confirmButtonText: "OK"
+            });
+        {% endif %}
+    });
+
+        </script>
+{% endblock %}
+
+{% block css %}
+<style>
+    #captcha label {display:none;}
+    input#id_captcha_1 {padding:5px 5px;border:1px solid #CCC;margin-top:10px;}
+    #captcha {width:200px;margin-left:0px;margin-right:auto;margin-top:5px;height:90px;}
+    .refresh {cursor:pointer;position:absolute;margin-top:20px;right:10px;font-size:10px;}
+    {% if device_info.type == 'phone' %}
+    .captcha {margin-left:0px;}
+    {% endif %}
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    {% if device_info.type != 'desktop' %}
+    <!-- Main Sidebar start-->
+    {% include 'sidebar.html' %}
+    <!-- Main Sidebar end-->
+    {% endif %}
+    <div class="page-container">
+        <div class="page-header clearfix">
+            <div class="row">
+                <div class="col-sm-12" style="text-align:center;">
+                    <h4 class="mt-0 mb-5">Create your EduRe Account</h4>
+                    <!--p class="text-muted mb-0">Register</p-->
+                </div>
+            </div>
+        </div>
+        <div class="page-content container-fluid">
+            <div class="row">
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-8">
+                    <div class="col-md-12">
+                        <div class="widget">
+                            <div class="widget-body">
+                                <div class="row">
+                                    <form method="POST" id="register" action="{% url 'register' %}">{% csrf_token %}
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="fullname" value="{% if request.POST.fullname %}{{ request.POST.fullname }}{% endif %}" class="form-control" placeholder="Fullname" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="username_reg" value="{% if request.POST.username_reg %}{{ request.POST.username_reg }}{% endif %}" class="form-control" placeholder="Username" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="email" value="{% if request.POST.email %}{{ request.POST.email }}{% endif %}" class="form-control" autocomplete="new-password" placeholder="Email" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="phone" onkeypress="validate(event);" value="{% if request.POST.phone %}{{ request.POST.phone }}{% endif %}" class="form-control" autocomplete="new-password" placeholder="Phone" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="password_reg" class="form-control" autocomplete="new-password" placeholder="Password" />
+                                        </div>
+
+                                        <div onclick="register();" class="btn btn-lg btn-block btn-success">Signup</div>
+
+                                        <div class="row">
+                                            <div class="col-md-4"><hr></div>
+                                            <div class="col-md-4" style="text-align:center;">
+                                                <div style="margin-top:10px;">OR Login with</div>
+                                            </div>
+                                            <div class="col-md-4"><hr></div>
+                                        </div>
+
+                                        <button type="button" class="btn btn-primary btn-lg btn-block">Login with <i class="ti-facebook"></i></button>
+                                        <button type="button" class="btn btn-info btn-lg btn-block">Login with <i class="ti-twitter"></i></button>
+                                        <button type="button" class="btn btn-danger btn-lg btn-block">Login with <i class="ti-google"></i></button>
+
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <label>BIRTHDAY</label>
+                                                <div id="no-icon-dtpicker" class="input-group date">
+                                                    <input type="text" name="birthday" value="{% if request.POST.birthday %}{{ request.POST.birthday }}{% endif %}" class="form-control"><span class="input-group-addon"><span class="ti-calendar"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <div class="radio-custom">
+                                                    <input id="optionsRadios1Hor" type="radio" name="gender" value="male" {% if request.POST.gender == 'male' or not request.POST.gender %}checked{% endif %}>
+                                                    <label for="optionsRadios1Hor">Male</label>
+                                                </div>
+                                                <div class="radio-custom">
+                                                    <input id="optionsRadios2Hor" type="radio" name="gender" value="female" {% if request.POST.gender == 'female' %}checked{% endif %}>
+                                                    <label for="optionsRadios2Hor">Female</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

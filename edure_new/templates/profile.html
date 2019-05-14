@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% block js %}
+<script type="text/javascript">
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+          $('#hasil_foto').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+        }
+    }
+    function save_profile() {
+        $('#profile').submit();
+    }
+    $(document).ready(function(){
+        $("#foto").change(function() {
+        	readURL(this);
+        });
+        sweetAlertInitialize();
+        {% if err %}
+            swal({
+                title: "Warning!",
+                text: "{{ err }}",
+                type: "error",
+                confirmButtonClass: "btn-raised btn-primary",
+                confirmButtonText: "OK"
+            });
+        {% endif %}
+        {% if success %}
+            swal({
+                title: "Saved!",
+                text: "Saved changes",
+                type: "success",
+                confirmButtonClass: "btn-raised btn-primary",
+                confirmButtonText: "OK"
+            });
+        {% endif %}
+
+    });
+</script>
+{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <!-- Main Sidebar start-->
+    {% include 'sidebar.html' %}
+    <!-- Main Sidebar end-->
+    <div class="page-container">
+        <div class="page-header clearfix">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="mt-0 mb-5">My Profile</h4>
+                    <p class="text-muted mb-0">Home</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-content container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="widget">
+                        <form id="profile" method="POST" action="{% url 'profile' %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="widget-heading">
+                                <h3 class="widget-title">Profile</h3>
+                            </div>
+                            <div class="widget-body">
+                                <div style="text-align:center;"><a href="javascript:void(0)" style="display: inline-block; margin:0 auto; border-radius: 50%; padding: 3px; background-color: #fff;">
+                                    <img id="hasil_foto" src="{% if request.profile.pict %}{{ request.profile.pict|thumbnail_url:'foto' }}{% else %}{{ MEDIA_URL }}build/images/profil_pict.png{% endif %}" width="100" height="100" alt="" class="media-object img-circle"></a>
+                                </div>
+                                <div class="form-group">
+                                    <input type="file" id="foto" name="pict" data-buttonname="btn-primary" data-iconname="ti-zip" class="filestyle" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="fullname" class="form-control" placeholder="Fullname" value="{{ request.user.first_name }}" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="username" class="form-control" placeholder="Username" value="{{ request.user.username }}" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control" autocomplete="new-password" placeholder="Email" value="{{ request.user.email }}" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="phone" class="form-control" autocomplete="new-password" placeholder="Phone" value="{% if request.profile.phone %}{{ request.profile.phone }}{% endif %}" />
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <label>Birthday</label>
+                                            <div id="no-icon-dtpicker" class="input-group date">
+                                                <input type="text" value="{% if request.profile.birthday %}{{ request.profile.birthday|date:'d/m/Y' }}{% endif %}" name="birthday" class="form-control"><span class="input-group-addon"><span class="ti-calendar"></span></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        <div class="col-md-6">
+                                            <div class="radio-custom">
+                                                <input id="optionsRadios1Hor" type="radio" name="gender" value="male" {% if request.profile.gender == 'male' %}checked{% endif %}>
+                                                <label for="optionsRadios1Hor">Male</label>
+                                            </div>
+                                            <div class="radio-custom">
+                                                <input id="optionsRadios2Hor" type="radio" name="gender" value="female" {% if request.profile.gender == 'female' %}checked{% endif %}>
+                                                <label for="optionsRadios2Hor">Female</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div onclick="save_profile();" class="btn btn-lg btn-block btn-info">Save</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">2017 &copy;  <a href="/">EduRe</a> by <a href="https://voidsolution.com" target="_blank">Voidsolution.</a></div>
+    </div>
+    <!-- Right Sidebar start-->
+    {% include 'sidebar_right.html' %}
+    <!-- Right Sidebar end-->
+</div>
+{% endblock %}

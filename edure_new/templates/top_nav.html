@@ -1,0 +1,72 @@
+                <div class="col-lg-12 contddrawborder">
+                    <div class="col-md-2 col-sm-2 panel-section">
+                        <div id="drive" class="no-border p-15 bg-purple media contd">
+                            <!-- <div class="media-left media-middle"><i class="media-object ti-files fs-36"></i></div> -->
+                            <div class="media-body  text-center">
+                                <!-- <h6 class="m-0">Drive Docs</h6> -->
+                                <span class="m-0">Post Articles</span>
+                                <!-- <div class="fs-20">20</div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 panel-section">
+                        <div id="dropbox" class="no-border p-15 bg-info media contd">
+                            <!-- <div class="media-left media-middle"><i class="media-object ti-dropbox fs-36"></i></div> -->
+                            <div class="media-body  text-center">
+                                <!-- <h6 class="m-0">Drop Box</h6> -->
+                                <span class="m-0">Study Area</span>
+                                <div class="fs-20">{% if request.storage_dropbox %}{{ request.storage_dropbox.count }}{% else %}{% endif %}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 panel-section">
+                        <div id="" class="no-border p-15 bg-primary media contd">
+                            <!-- <div class="media-left media-middle"><i class="media-object ti-clipboard fs-36"></i></div> -->
+                            <div class="media-body text-center">
+                                <!-- <h6 class="m-0">Feeds</h6> -->
+                                <span class="m-0">Top Views</span>
+                                <!-- <div class="fs-20">20</div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 panel-section">
+                        <div id="" class="no-border p-15 bg-danger media contd">
+                            <!-- <div class="media-left media-middle"><i class="media-object ti-dashboard fs-36"></i></div> -->
+                            <div class="media-body  text-center line_height_for_one">
+                               <!--  <h6 class="m-0">Tutorial</h6> -->
+                               <span class="m-0">Dashboard</span>
+                                <!-- <div class="fs-20">20</div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 panel-section">
+                        <div id="" class="no-border p-15 bg-live media contd">
+                            <!-- <div class="media-left media-middle"><i class="media-object ti-dashboard fs-36"></i></div> -->
+                            <div class="media-body  text-center">
+                               <!--  <h6 class="m-0">Tutorial</h6> -->
+                               <span class="m-0">Live Sessions</span>
+                                <!-- <div class="fs-20">20</div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 panel-section">
+                        <div id="" class="no-border p-15 bg-schedule media contd ">
+                            <!-- <div class="media-left media-middle"><i class="media-object ti-dashboard fs-36"></i></div> -->
+                            <div class="media-body  text-center line_height_for_one">
+                               <!--  <h6 class="m-0">Tutorial</h6> -->
+                               <a href="{% url 'events' %}" class="m-0 vertical-align-middle">Schedule</a>
+                                <!-- <div class="fs-20">20</div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 panel-section">
+                        <div id="" class="no-border p-15 bg-planner media contd">
+                            <!-- <div class="media-left media-middle"><i class="media-object ti-dashboard fs-36"></i></div> -->
+                            <div class="media-body  text-center">
+                               <!--  <h6 class="m-0">Tutorial</h6> -->
+                               <span class="m-0">Edure Planner</span>
+                                <!-- <div class="fs-20">20</div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>

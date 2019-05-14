@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head><script type="text/javascript">!function(){var cookieName="resolution";var i,key,value,prevSet,cookies=document.cookie.split(";");function isCookieSet(){for(i=0;i<cookies.length;i++){key=cookies[i].substr(0,cookies[i].indexOf("="));value=cookies[i].substr(cookies[i].indexOf("=")+1);key=key.replace(/^\s+|\s+$/g,"");if(key==cookieName)return true}return false}prevSet=isCookieSet();document.cookie=cookieName+"="+screen.width+":"+screen.height+":"+(window.devicePixelRatio?window.devicePixelRatio:1)+"; path=/";if(navigator.cookieEnabled&&!prevSet)document.location.reload(true)}(document,screen);</script>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Edure</title>
+        <link rel="canonical" href="http://www.edure.co.in">
+        <!-- PACE-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/PACE/themes/blue/pace-theme-flash.css">
+        <script type="text/javascript" src="/media/plugins/PACE/pace.min.js"></script>
+        <!-- Bootstrap CSS-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/bootstrap/dist/css/bootstrap.min.css">
+        <!-- Fonts-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/themify-icons/themify-icons.css">
+        <!-- Malihu Scrollbar-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css">
+        <!-- Animo.js-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/animo.js/animate-animo.min.css">
+        <!-- Flag Icons-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/flag-icon-css/css/flag-icon.min.css">
+        <link rel="stylesheet" type="text/css" href="/media/plugins/font-awesome/css/font-awesome.min.css">
+        <!-- Bootstrap Progressbar-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css">
+        <link rel="stylesheet" type="text/css" href="/media/plugins/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+        <!-- Toastr-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/toastr/toastr.min.css">
+        <!-- SpinKit-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/SpinKit/css/spinners/7-three-bounce.css">
+        <!-- Jvector Map-->
+        <!--link rel="stylesheet" type="text/css" href="/media/plugins/jvectormap/jquery-jvectormap-2.0.3.css"-->
+        <!-- Morris Chart-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/morris.js/morris.css">
+        <!-- DataTables-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/media/plugins/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/media/plugins/datatables.net-colreorder-bs/css/colReorder.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/media/plugins/datatables.net-responsive-bs/css/responsive.bootstrap.min.css">
+        <!-- Weather Icons-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/weather-icons/css/weather-icons-wind.min.css">
+        <link rel="stylesheet" type="text/css" href="/media/plugins/weather-icons/css/weather-icons.min.css">
+        <!-- FullCalendar-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/fullcalendar/dist/fullcalendar.min.css">
+        <link rel="stylesheet" type="text/css" href="/media/plugins/fullcalendar/dist/fullcalendar.print.css" media="print">
+        <!-- jQuery MiniColors-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/jquery-minicolors/jquery.minicolors.css">
+        <!-- Bootstrap DateTimePicker-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
+        <!-- Bootstrap Date Range Picker-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/bootstrap-daterangepicker/daterangepicker.css">
+        <!-- Bootstrap Progressbar-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css">
+        <!-- Bootstrap Select-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/bootstrap-select/dist/css/bootstrap-select.min.css">
+        <!-- Primary Style-->
+        <link rel="stylesheet" type="text/css" href="/media/build/css/first-layout.css">
+        <!-- Sweet Alert-->
+        <link rel="stylesheet" type="text/css" href="/media/plugins/bootstrap-sweetalert/lib/sweet-alert.css">
+        <style>
+            #dropbox, #drive {cursor:pointer;}
+        </style>
+        
+<style>
+    #captcha label {display:none;}
+    input#id_captcha_1 {padding:5px 5px;border:1px solid #CCC;margin-top:10px;}
+    #captcha {width:200px;margin-left:0px;margin-right:auto;margin-top:5px;height:90px;}
+    .refresh {cursor:pointer;position:absolute;margin-top:20px;right:10px;font-size:10px;}
+    
+</style>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file://-->
+        <!--[if lt IE 9]>
+        <script type="text/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script type="text/javascript" src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body data-sidebar-color="sidebar-light" class="sidebar-light pace-done sidebar-toggled">
+        <!-- Header start-->
+        <header>
+            <div class="search-bar closed">
+                <form>
+                    <div class="input-group input-group-lg">
+                        <input type="text" placeholder="Search for..." class="form-control"><span class="input-group-btn">
+                        <button type="button" class="btn btn-default search-bar-toggle"><i class="ti-close"></i></button></span>
+                    </div>
+                </form>
+            </div>
+            <a href="/" class="brand pull-left" style="color:#DDD;font-size:32px;">
+            <img src="/media/build/images/logo/education.png" width="50" /> EduRe</a>
+            
+            <a href="javascript:;" role="button" class="hamburger-menu pull-left"><span></span></a>
+            
+            <form class="search-form pull-left hidden-xs">
+                <div class="form-group has-feedback mb-0">
+                    <input type="text" aria-describedby="inputSearchFor" placeholder="Search for..." style="width: 200px" class="form-control rounded"><span aria-hidden="true" class="ti-search form-control-feedback"></span><span id="inputSearchFor" class="sr-only">(default)</span>
+                </div>
+            </form>
+            
+            
+            
+        </header>
+        <!-- Header end-->
+        
+<div class="main-container">
+    
+    <!-- Main Sidebar start-->
+    
+    <aside data-mcs-theme="minimal-dark" style="background-image: url(/media/build/images/backgrounds/11.jpg)" class="main-sidebar mCustomScrollbar">
+        
+        <ul class="list-unstyled navigation mb-0">
+            <li class="panel"><a href="/"><span class="sidebar-title">Signin </span></a></li>
+            <li class="panel"><a href="/"><span class="sidebar-title">Signup </span></a></li>
+        </ul>
+
+        
+    </aside>
+    <!-- Main Sidebar end-->
+    
+    <div class="page-container">
+        <div class="page-header clearfix">
+            <div class="row">
+                <div class="col-sm-12" style="text-align:center;">
+                    <h4 class="mt-0 mb-5">Create your EduRe Account</h4>
+                    <!--p class="text-muted mb-0">Register</p-->
+                </div>
+            </div>
+        </div>
+        <div class="page-content container-fluid">
+            <div class="row">
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-8">
+                    <div class="col-md-12">
+                        <div class="widget">
+                            <div class="widget-body">
+                                <div class="row">
+                                    <form method="POST" id="register" action="/register/"><input type='hidden' name='csrfmiddlewaretoken' value='HOgsWj577Y3IQbdEa8o5DnHwRmGb40Bu' />
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="fullname" value="" class="form-control" placeholder="Fullname" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="username_reg" value="" class="form-control" placeholder="Username" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="email" value="" class="form-control" autocomplete="new-password" placeholder="Email" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="phone" onkeypress="validate(event);" value="" class="form-control" autocomplete="new-password" placeholder="Phone" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" name="password_reg" class="form-control" autocomplete="new-password" placeholder="Password" />
+                                        </div>
+
+                                        <div onclick="register();" class="btn btn-lg btn-block btn-success">Signup</div>
+
+                                        <div class="row">
+                                            <div class="col-md-4"><hr></div>
+                                            <div class="col-md-4" style="text-align:center;">
+                                                <div style="margin-top:10px;">OR Login with</div>
+                                            </div>
+                                            <div class="col-md-4"><hr></div>
+                                        </div>
+
+                                        <button type="button" class="btn btn-primary btn-lg btn-block">Login with <i class="ti-facebook"></i></button>
+                                        <button type="button" class="btn btn-info btn-lg btn-block">Login with <i class="ti-twitter"></i></button>
+                                        <button type="button" class="btn btn-danger btn-lg btn-block">Login with <i class="ti-google"></i></button>
+
+
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <label>BIRTHDAY</label>
+                                                <div id="no-icon-dtpicker" class="input-group date">
+                                                    <input type="text" name="birthday" value="" class="form-control"><span class="input-group-addon"><span class="ti-calendar"></span></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <div class="row">
+                                        <div class="form-group">
+                                            <div class="col-md-6">
+                                                <div class="radio-custom">
+                                                    <input id="optionsRadios1Hor" type="radio" name="gender" value="male" checked>
+                                                    <label for="optionsRadios1Hor">Male</label>
+                                                </div>
+                                                <div class="radio-custom">
+                                                    <input id="optionsRadios2Hor" type="radio" name="gender" value="female" >
+                                                    <label for="optionsRadios2Hor">Female</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- jQuery-->
+        <script type="text/javascript" src="/media/plugins/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript-->
+        <script type="text/javascript" src="/media/plugins/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- Malihu Scrollbar-->
+        <script type="text/javascript" src="/media/plugins/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+        <!-- Animo.js-->
+        <script type="text/javascript" src="/media/plugins/animo.js/animo.min.js"></script>
+        <!-- Bootstrap Progressbar-->
+        <script type="text/javascript" src="/media/plugins/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <!-- jQuery Easy Pie Chart-->
+        <script type="text/javascript" src="/media/plugins/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
+        <!-- Toastr-->
+        <script type="text/javascript" src="/media/plugins/toastr/toastr.min.js"></script>
+        <!-- MomentJS-->
+        <script type="text/javascript" src="/media/plugins/moment/min/moment.min.js"></script>
+        <!-- jQuery BlockUI-->
+        <script type="text/javascript" src="/media/plugins/blockUI/jquery.blockUI.js"></script>
+        <!-- jQuery Counter Up-->
+        <script type="text/javascript" src="/media/plugins/jquery-waypoints/waypoints.min.js"></script>
+        <script type="text/javascript" src="/media/plugins/Counter-Up/jquery.counterup.min.js"></script>
+        <!-- Jvector Map-->
+        <script type="text/javascript" src="/media/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js"></script>
+        <script type="text/javascript" src="/media/plugins/jvectormap/maps/jquery-jvectormap-world-mill.js"></script>
+        <!-- Flot Charts-->
+        <script type="text/javascript" src="/media/plugins/flot/jquery.flot.js"></script>
+        <script type="text/javascript" src="/media/plugins/flot/jquery.flot.resize.js"></script>
+        <script type="text/javascript" src="/media/plugins/flot.curvedlines/curvedLines.js"></script>
+        <script type="text/javascript" src="/media/plugins/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+        <!-- Morris Chart-->
+        <script type="text/javascript" src="/media/plugins/raphael/raphael-min.js"></script>
+        <script type="text/javascript" src="/media/plugins/morris.js/morris.min.js"></script>
+        <!-- DataTables-->
+        <script type="text/javascript" src="/media/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="/media/plugins/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="/media/plugins/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="/media/plugins/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script type="text/javascript" src="/media/plugins/jszip/dist/jszip.min.js"></script>
+        <script type="text/javascript" src="/media/plugins/pdfmake/build/pdfmake.min.js"></script>
+        <script type="text/javascript" src="/media/plugins/pdfmake/build/vfs_fonts.js"></script>
+        <script type="text/javascript" src="/media/plugins/datatables.net-buttons/js/buttons.print.min.js"></script>
+        <script type="text/javascript" src="/media/plugins/datatables.net-buttons/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="/media/plugins/datatables.net-colreorder/js/dataTables.colReorder.min.js"></script>
+        <script type="text/javascript" src="/media/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+        <script type="text/javascript" src="/media/plugins/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+        <!-- jQuery UI-->
+        <script type="text/javascript" src="/media/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <!-- FullCalendar-->
+        <script type="text/javascript" src="/media/plugins/fullcalendar/dist/fullcalendar.min.js"></script>
+        <!-- jQuery MiniColors-->
+        <script type="text/javascript" src="/media/plugins/jquery-minicolors/jquery.minicolors.min.js"></script>
+        <!-- Bootstrap Date Range Picker-->
+        <script type="text/javascript" src="/media/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+        <!-- Bootstrap FileStyle-->
+        <script type="text/javascript" src="/media/plugins/bootstrap-filestyle/src/bootstrap-filestyle.js"></script>
+        <!-- Bootstrap Select-->
+        <script type="text/javascript" src="/media/plugins/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+        <!-- Sweet Alert-->
+        <script type="text/javascript" src="/media/plugins/bootstrap-sweetalert/lib/sweet-alert.min.js"></script>
+        <!-- Code Prettify-->
+        <script type="text/javascript" src="/media/plugins/code-prettify/src/run_prettify.js"></script>
+        <!-- Bootstrap DateTimePicker-->
+        <script type="text/javascript" src="/media/plugins/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="/media/build/js/page-content/pickers/datetime-picker.js"></script>
+        <script type="text/javascript" src="/media/build/js/page-content/indicators/sweet-alert.js"></script>
+        <!-- Custom JS-->
+        <script type="text/javascript" src="/media/build/js/first-layout/app.js"></script>
+        <script type="text/javascript" src="/media/build/js/first-layout/demo.js"></script>
+        <script type="text/javascript" src="/media/build/js/page-content/dashboard/index.js"></script>
+        <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="a1vbq4ru4kcy0ko"></script>
+        <script type="text/javascript" src="http://edure.co.in:8001/web-apps/apps/api/documents/api.js"></script>
+        <script src="/media/filepicker.js"></script>
+
+        <script type="text/javascript">
+            function initPicker() {
+                var picker = new FilePicker({
+                    apiKey: 'AIzaSyDJ7S7IMtdreqjH7rQ9F7l4-iQz28Ek-qY',
+                    clientId: '450204116437-18su2sla0nsvmm4d3dlsqad39vaq9nq5',
+                    buttonEl: document.getElementById('drive'),
+                    onSelect: function(file) {
+                        alert('Selected ' + file.title);
+                    }
+                });
+            }
+
+            function call_captcha() {
+                $.ajax({
+                    type:"GET",
+                    url:"/get_captcha/",
+                    cache:false,
+                    beforeSend:function(){
+                        $('#captcha').html('Loading Captcha..');
+                        $('input[name=captcha_1').addClass('form-control');
+                    },
+                    success:function(resp){
+                        $('#captcha').html(resp);
+                        $('input[name=captcha_1]').attr('placeholder', 'Insert code above');
+                        $('input[name=captcha_1').addClass('form-control');
+                    }
+                });
+            }
+
+            function validate(evt) {
+                var theEvent = evt || window.event;
+                var key = theEvent.keyCode || theEvent.which;
+                var real_key = key;
+                key = String.fromCharCode(key);
+                var regex = /[0-9]|\./;
+                if(!regex.test(key) && real_key != '8') {
+                    theEvent.returnValue = false;
+                    if(theEvent.preventDefault) theEvent.preventDefault();
+                }
+            }
+
+
+
+            $(document).ready(function(){
+              options = {
+                  success: function(files) {
+                      $.ajax({
+                          type:"POST",
+                          cache:false,
+                          data:{
+                              "csrfmiddlewaretoken":"HOgsWj577Y3IQbdEa8o5DnHwRmGb40Bu",
+                              "raw_json":JSON.stringify(files),
+                              "parent":""
+                          },
+                          url:"/storage/",
+                          beforeSend:function(){
+                          },
+                          success:function(resp){
+                              if (resp['status']) {
+                                  window.location.reload();
+                              } else {
+                                  alert(resp['msg']);
+                              }
+                          }
+                      });
+                  },
+
+                  cancel: function() {
+
+                  },
+
+                  linkType: "preview", // or "direct"
+
+                  multiselect: true, // or true
+                  extensions: ['.pdf', '.doc', '.docx', '.htm', '.url', '.html'],
+
+                  // You cannot specify `linkType: "direct"` when using `folderselect: true`.
+                  folderselect: true, // or true
+              };
+
+                  $('#dropbox').click(function(){
+                      Dropbox.choose(options);
+                  });
+
+                
+                    $("body").toggleClass("sidebar-toggled");
+                
+            });
+        </script>
+        
+<script type="text/javascript">
+    function register() {
+        var fullname = $('input[name=fullname]').val();
+        var username = $('input[name=username_reg]').val();
+        var email = $('input[name=email]').val();
+        var phone = $('input[name=phone]').val();
+        var password = $('input[name=password_reg]').val();
+        var birthday = $('input[name=birthday]').val();
+        var gender = $('input[name=gender]').val();
+        if (fullname && username && email && password && birthday && gender && phone) {
+            $('#register').submit();
+        } else {
+            swal({
+                title: "Warning!",
+                text: "Please fill all fields",
+                type: "error",
+                confirmButtonClass: "btn-raised btn-primary",
+                confirmButtonText: "OK"
+            });
+            if (!(fullname)) {
+                $('input[name=fullname]').parent().addClass('has-error');
+            }
+            if (!(username)) {
+                $('input[name=username_reg]').parent().addClass('has-error');
+            }
+            if (!(email)) {
+                $('input[name=email]').parent().addClass('has-error');
+            }
+            if (!(phone)) {
+                $('input[name=phone]').parent().addClass('has-error');
+            }
+            if (!(password)) {
+                $('input[name=password_reg]').parent().addClass('has-error');
+            }
+            if (!(birthday)) {
+                $('input[name=birthday]').parent().addClass('has-error');
+            }
+            if (!(gender)) {
+                $('input[name=gender]').parent().addClass('has-error');
+            }
+        }
+
+    }
+    $(document).ready(function(){
+        $('input').focusin(function(){
+            $(this).parent().removeClass('has-error');
+        });
+        
+    });
+
+        </script>
+
+        <script src="https://www.google.com/jsapi?key=AIzaSyDJ7S7IMtdreqjH7rQ9F7l4-iQz28Ek-qY"></script>
+        <script src="https://apis.google.com/js/client.js?onload=initPicker"></script>
+    </body>
+</html>

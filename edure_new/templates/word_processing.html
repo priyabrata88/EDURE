@@ -1,0 +1,14 @@
+
+<div id="placeholder"></div>
+
+<script type="text/javascript">
+new DocsAPI.DocEditor("placeholder", {
+    "document": {
+        "fileType": "{{ s.ext }}",
+        "key": "{{ key }}",
+        "title": "{{ s.name }}.{{ s.ext }}",
+        "url": "http://edure.co.in{{ MEDIA_URL }}example.{{ s.ext }}"
+    },
+    "documentType": {% if s.ext == 'docx' %}"text"{% endif %}{% if s.ext == 'xlsx' %}"spreadsheet"{% endif %}{% if s.ext == 'pptx' %}"presentation"{% endif %}
+});
+</script>

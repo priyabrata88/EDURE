@@ -1,0 +1,492 @@
+{% extends 'base.html' %}
+{% block css %}
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}
+{% block body %}
+<div class="main-container">
+<!-- Main Sidebar start-->
+{% include 'sidebar.html' %}
+<!-- Main Sidebar end-->
+<div class="page-container">
+    <div class="page-content container-fluid pl-0">
+        <!--div class="row">
+            <div class="col-sm-12">
+                <h4 class="mt-0 mb-5">Latest Feed</h4>
+            </div>
+            </div-->
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-sm-12">
+                <div class="page-header">
+                    <div class="page-components clearfix fs-16">
+                       <div class="toggle-public-private col-lg-3 col-md-3 col-sm-12">
+                            <div class="toggle-component">
+                                <span class="mr-20">Public</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+
+                            <div class="toggle-component">
+                                <span class="mr-13">Private</span>
+                                <label class="switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                       </div>
+                       <ul class="page-circle-components list-unstyled col-lg-9 col-md-9 col-sm-12">
+
+                            <li class="pull-left settabwidth">
+                                <a href="javascript:;" role="button" class="component c-blue">
+                                    <span><i class="ti-settings" aria-hidden="true"></i></span>
+                                </a>
+                                <span>Blog Settings</span>
+                            </li>
+
+                            <li class="pull-left settabwidth">
+                                <a href="javascript:;" role="button" class="component c-gray">
+                                <!-- <img src="/media/build/images/pageheaderearning_pict.png" width="28" height="35" style="padding-bottom: 6px;"> -->
+                                     <span><i class="fa fa-money" aria-hidden="true"></i></span>
+                                 </a>
+                                 <span>Earnings</span>
+                            </li>
+
+                            <li class="pull-left settabwidth">
+
+                                <a href="javascript:;" role="button" class="component c-blue">
+                                        <img src="/media/build/images/pageheaderbag_pict.png" width="28" height="35" style="padding-bottom: 6px;">
+                                 </a>
+                                <span>Wallet</span>
+                            </li>
+
+                            <li class="pull-left settabwidth">
+                                <a href="javascript:;" role="button" class="component c-blue">
+                                    <img src="/media/build/images/pageheaderbadge_pict.png" width="28" height="35" style="padding-bottom: 6px;">
+                                 </a>
+                                 <span>Badges</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                {% include 'top_nav.html' %}
+                <div class="thumbnail clearfix p-0"> <!-- p-20 -->
+                    <div class="widget col-lg-8 col-md-8 col-sm-12 p-0">
+                        <div class="widget-body">
+                            <ul role="tablist" class="nav nav-tabs mb-15 text-center">
+                                 <li role="presentation" class="active settabwidth"><a id="profile-tab" href="#web" role="tab" data-toggle="tab" aria-controls="web" aria-expanded="true">Profile <span class="badge bg-primary">5</span></a></li>
+                                <li role="presentation" class="settabwidth"><a id="web-tab" href="#web" role="tab" data-toggle="tab" aria-controls="web" aria-expanded="true">Top Feeds <span class="badge bg-primary">9</span></a></li>
+                                <li role="presentation" class="settabwidth"><a id="images-tab" href="#images" role="tab" data-toggle="tab" aria-controls="images" aria-expanded="false">Bookmark <span class="badge bg-success">2</span></a></li>
+                                <li role="presentation" class="settabwidth"><a id="videos-tab" href="#videos" role="tab" data-toggle="tab" aria-controls="videos" aria-expanded="false">On This Day <span class="badge bg-warning">1</span></a></li>
+                            </ul>
+                            <div class="tab-content mt--16">
+                                <div id="web" role="tabpanel" aria-labelledby="web-tab" class="tab-pane fade active in">
+                                    <!-- <p id="result"></p> -->
+                                    <ul class="list-unstyled blogs">
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-sm-8 col-md-8 blog-content">
+                                                    <h4 class="mb-5">Lorem ipsum dolor sit amet</h4>by
+                                                    <a href="#" class="text-primary"><i>www.bing.com</i></a>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                    </p>
+                                                    <div class="blog-status clearfix">
+                                                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i>10,000 Likes</a>
+                                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>700 Comments</a>
+                                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>7,00,000 Views</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 col-md-4 blog-thumbnail">
+                                                    <div class="thumbnail">
+                                                        <a href="{{ MEDIA_URL }}/build/images/backgrounds/30.jpg" title="Wallpaper 01"><img src="{{ MEDIA_URL }}/build/images/backgrounds/30.jpg" alt="" class="img-responsive"></a>
+                                                        <div class="text-right caption">
+                                                            <ul class="list-inline mb-0 display-table">
+                                                                <li class="comments"><a href="#"><i class="fa fa-comment-o border-radius-icon" aria-hidden="true"></i></a></li>
+                                                               <li class="facebook"> <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                                                                <li class="twitter"><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                                                                <li class="linkedin"><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                                                <li class="pinterest"><a href="#"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-sm-8 col-md-8 blog-content">
+                                                    <h4 class="mb-5">Lorem ipsum dolor sit amet</h4>by
+                                                    <a href="#" class="text-primary"><i>www.bing.com</i></a>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                    </p>
+                                                    <div class="blog-status clearfix">
+                                                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i>10,000 Likes</a>
+                                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>700 Comments</a>
+                                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>7,00,000 Views</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 col-md-4 blog-thumbnail">
+                                                    <div class="thumbnail">
+                                                        <a href="{{ MEDIA_URL }}/build/images/backgrounds/30.jpg" title="Wallpaper 01"><img src="{{ MEDIA_URL }}/build/images/backgrounds/30.jpg" alt="" class="img-responsive"></a>
+                                                        <div class="text-right caption">
+                                                            <ul class="list-inline mb-0 display-table">
+                                                                <li class="comments"><a href="#"><i class="fa fa-comment-o border-radius-icon" aria-hidden="true"></i></a></li>
+                                                               <li class="facebook"> <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                                                                <li class="twitter"><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                                                                <li class="linkedin"><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                                                <li class="pinterest"><a href="#"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="images" role="tabpanel" aria-labelledby="images-tab" class="tab-pane fade">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-sm-8 col-md-8 blog-content">
+                                                    <h4 class="mb-5">Lorem ipsum dolor sit amet</h4>by
+                                                    <a href="#" class="text-primary"><i>www.bing.com</i></a>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                    </p>
+                                                    <div class="blog-status clearfix">
+                                                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i>10,000 Likes</a>
+                                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>700 Comments</a>
+                                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>7,00,000 Views</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 col-md-4 blog-thumbnail">
+                                                    <div class="thumbnail">
+                                                        <a href="{{ MEDIA_URL }}/build/images/backgrounds/30.jpg" title="Wallpaper 01"><img src="{{ MEDIA_URL }}/build/images/backgrounds/30.jpg" alt="" class="img-responsive"></a>
+                                                        <div class="text-right caption">
+                                                            <ul class="list-inline mb-0 display-table">
+                                                                <li class="comments"><a href="#"><i class="fa fa-comment-o border-radius-icon" aria-hidden="true"></i></a></li>
+                                                               <li class="facebook"> <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                                                                <li class="twitter"><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                                                                <li class="linkedin"><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                                                <li class="pinterest"><a href="#"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-sm-8 col-md-8 blog-content">
+                                                    <h4 class="mb-5">Lorem ipsum dolor sit amet</h4>by
+                                                    <a href="#" class="text-primary"><i>www.bing.com</i></a>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                    </p>
+                                                    <div class="blog-status clearfix">
+                                                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i>10,000 Likes</a>
+                                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>700 Comments</a>
+                                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>7,00,000 Views</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 col-md-4 blog-thumbnail">
+                                                    <div class="thumbnail">
+                                                        <a href="{{ MEDIA_URL }}/build/images/backgrounds/30.jpg" title="Wallpaper 01"><img src="{{ MEDIA_URL }}/build/images/backgrounds/30.jpg" alt="" class="img-responsive"></a>
+                                                        <div class="text-right caption">
+                                                            <ul class="list-inline mb-0 display-table">
+                                                                <li class="comments"><a href="#"><i class="fa fa-comment-o border-radius-icon" aria-hidden="true"></i></a></li>
+                                                               <li class="facebook"> <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                                                                <li class="twitter"><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                                                                <li class="linkedin"><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                                                <li class="pinterest"><a href="#"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="videos" role="tabpanel" aria-labelledby="videos-tab" class="tab-pane fade">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <div class="row">
+                                                <div class="col-sm-8 col-md-8 blog-content">
+                                                    <h4 class="mb-5">Lorem ipsum dolor sit amet</h4>by
+                                                    <a href="#" class="text-primary"><i>www.bing.com</i></a>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                    </p>
+                                                    <div class="blog-status clearfix">
+                                                        <a href="#"><i class="fa fa-heart" aria-hidden="true"></i>10,000 Likes</a>
+                                                        <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i>700 Comments</a>
+                                                        <a href="#"><i class="fa fa-eye" aria-hidden="true"></i>7,00,000 Views</a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4 col-md-4 blog-thumbnail">
+                                                    <div class="thumbnail">
+                                                        <a href="{{ MEDIA_URL }}/build/images/backgrounds/30.jpg" title="Wallpaper 01"><img src="{{ MEDIA_URL }}/build/images/backgrounds/30.jpg" alt="" class="img-responsive"></a>
+                                                        <div class="text-right caption">
+                                                            <ul class="list-inline mb-0 display-table">
+                                                                <li class="comments"><a href="#"><i class="fa fa-comment-o .border-radius-icon" aria-hidden="true"></i></a></li>
+                                                               <li class="facebook"> <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+                                                                <li class="twitter"><a href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                                                                <li class="linkedin"><a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                                                                <li class="pinterest"><a href="#"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <nav>
+                                <ul class="pagination">
+                                    <li class="disabled pagination-prev"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                                    <li><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li class="active"><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li class="pagination-next"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="tabneighbour col-lg-4 col-md-4 col-sm-8">
+                        <div class ="tabneighbour-border clearfix">
+                            <ul role = "tablist" class="list-unstyled tabneighbour-element">
+                                <li role="presentation" class="active">
+                                    <a href="javascript:;" role="tab" aria-expanded="true">Likes</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" role="button">Views</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" role="button">Posts</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-12">
+                <div class="widget graphset">
+                    <img src="{{ MEDIA_URL }}build/images/graph.png" width="78%">
+                </div>
+                <div class="widget">
+                    <div class="widget-heading">
+                        <h3 class="widget-title setcolorrecentactivity">Recent Activities</h3>
+                    </div>
+                    <div class="widget-body">
+                        <ul class="activity-sm list-unstyled mb-0 ">
+                            <li>
+                                <div style="display: inline-flex">
+                                    <span><img src="{{ MEDIA_URL }}build/images/products/01.jpg" width="80" height="50"></span>
+                                    <span class="setrctextborder">Be aware of this cryptocurrancy-mining Android Malware</span>
+                                </div>
+
+                                <div class ="clearfix">
+                                    <ul role = "tablist" class="list-unstyled rcelementcontrol">
+                                        <li role="presentation" class="rcelement">
+                                            <a href="javascript:;" role="button" aria-expanded="true">
+                                                <i class="fa fa-thumbs-o-up"></i>
+                                            </a>
+                                        </li>
+                                        <li class="rcelement">
+                                            <a href="javascript:;" role="button">
+                                                <i class="fa fa-comment-o"></i>
+                                            </a>
+                                        </li>
+                                        <li class="rcelement">
+                                            <a href="javascript:;" role="button">
+                                                <i class="fa fa-share-alt"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div style="display: inline-flex">
+                                    <span><img src="{{ MEDIA_URL }}build/images/products/02.jpg" width="80" height="50"></span>
+                                    <span class="setrctextborder">"Wearable" computing a growing market: IDC</span>
+                                </div>
+
+                                <div class ="clearfix">
+                                    <ul role = "tablist" class="list-unstyled rcelementcontrol">
+                                        <li role="presentation" class="rcelement">
+                                            <a href="javascript:;" role="button" aria-expanded="true">
+                                                <i class="fa fa-thumbs-o-up"></i>
+                                            </a>
+                                        </li>
+                                        <li class="rcelement">
+                                            <a href="javascript:;" role="button">
+                                                <i class="fa fa-comment-o"></i>
+                                            </a>
+                                        </li>
+                                        <li class="rcelement">
+                                            <a href="javascript:;" role="button">
+                                                <i class="fa fa-share-alt"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div style="display: inline-flex">
+                                    <span><img src="{{ MEDIA_URL }}build/images/products/03.jpg" width="80" height="50"></span>
+                                    <span class="setrctextborder">Samsung Gear S3 update helps fix battery drain issuse</span>
+                                </div>
+
+                                <div class ="clearfix">
+                                    <ul role = "tablist" class="list-unstyled rcelementcontrol">
+                                        <li role="presentation" class="rcelement">
+                                            <a href="javascript:;" role="button" aria-expanded="true">
+                                                <i class="fa fa-thumbs-o-up"></i>
+                                            </a>
+                                        </li>
+                                        <li class="rcelement">
+                                            <a href="javascript:;" role="button">
+                                                <i class="fa fa-comment-o"></i>
+                                            </a>
+                                        </li>
+                                        <li class="rcelement">
+                                            <a href="javascript:;" role="button">
+                                                <i class="fa fa-share-alt"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget setborderconnection">
+                    <div class="widget-heading">
+                        <h1 class="widget-title" style="text-decoration: underline;">Connections</h1>
+                    </div>
+                    <div class="widget-body">
+                        <!-- <ul class="media-list mb-0">
+                            <li class="media">
+                                <a href="javascript:;" class="conversation-toggle">
+                                    <div class="media-left avatar"><img src="{{ MEDIA_URL }}build/images/users/10.jpg" alt="" class="media-object img-circle"><span class="status bg-success"></span></div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Philip Fernandez</h5>
+                                        <p class="text-muted mb-0">489 Rhapsody Street</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;" class="conversation-toggle">
+                                    <div class="media-left avatar"><img src="{{ MEDIA_URL }}build/images/users/20.jpg" alt="" class="media-object img-circle"><span class="status bg-success"></span></div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Mary Carr</h5>
+                                        <p class="text-muted mb-0">3611 West Fork Drive</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;" class="conversation-toggle">
+                                    <div class="media-left avatar"><img src="{{ MEDIA_URL }}build/images/users/11.jpg" alt="" class="media-object img-circle"><span class="status bg-danger"></span></div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Joseph Salazar</h5>
+                                        <p class="text-muted mb-0">4489 Hart Ridge Road</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;" class="conversation-toggle">
+                                    <div class="media-left avatar"><img src="{{ MEDIA_URL }}build/images/users/06.jpg" alt="" class="media-object img-circle"><span class="status bg-warning"></span></div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">John Cruz</h5>
+                                        <p class="text-muted mb-0">3274 Lyndon Street</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;" class="conversation-toggle">
+                                    <div class="media-left avatar"><img src="{{ MEDIA_URL }}build/images/users/19.jpg" alt="" class="media-object img-circle"><span class="status bg-success"></span></div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Jacqueline Rios</h5>
+                                        <p class="text-muted mb-0">559 Holly Street</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search for..." class="form-control"><span class="input-group-btn">
+                                    <button type="button" class="btn btn-outline btn-default"><i class="zmdi zmdi-search"></i></button></span>
+                                </div>
+                            </li>
+                        </ul>  -->
+                        <ul class="list-unstyled">
+                            <li>
+                                <img src="{{ MEDIA_URL }}build/images/connectionuser_pict.png" width="8%">
+                                <span>Network 1</span>
+                            </li>
+
+                            <li>
+                                <img src="{{ MEDIA_URL }}build/images/connectionuser_pict.png" width="8%">
+                                <span>Network 2</span>
+                            </li>
+
+                            <li>
+                                <img src="{{ MEDIA_URL }}build/images/connectionuser_pict.png" width="8%">
+                                <span>Network 3</span>
+                            </li>
+
+                            <li>
+                                <img src="{{ MEDIA_URL }}build/images/connectionuser_pict.png" width="8%">
+                                <span>Network 4</span>
+                            </li>
+
+                            <li>
+                                <img src="{{ MEDIA_URL }}build/images/connectionuser_pict.png" width="8%">
+                                <span>Network 5</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">2017 &copy;  <a href="/">EduRe</a> by <a href="https://voidsolution.com" target="_blank">Voidsolution.</a></div>
+    </div>
+    <!-- Right Sidebar start-->
+    {% include 'sidebar_right.html' %}
+    <!-- Right Sidebar end-->
+</div>
+{% endblock %}

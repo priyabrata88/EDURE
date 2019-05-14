@@ -1,0 +1,247 @@
+{% extends 'base.html' %}
+{% block css %}
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}
+{% block body %}
+<div class="main-container">
+<!-- Main Sidebar start-->
+{% include 'sidebar.html' %}
+<!-- Main Sidebar end-->
+<div class="page-container">
+    <div class="page-header clearfix">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 class="mt-0 mb-5">Welcome to EduRe</h4>
+                <p class="text-muted mb-0">Home</p>
+            </div>
+        </div>
+    </div>
+    <div class="page-content container-fluid">
+        {% include 'top_nav.html' %}
+        <!--div class="row">
+            <div class="col-sm-12">
+                <h4 class="mt-0 mb-5">Latest Feed</h4>
+            </div>
+            </div-->
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <div class="thumbnail p-20">
+                    <div class="widget">
+                        <div class="widget-body">
+                            <ul role="tablist" class="nav nav-tabs mb-15">
+                                <li role="presentation" class="active"><a id="web-tab" href="#web" role="tab" data-toggle="tab" aria-controls="web" aria-expanded="true">Top Feeds <span class="badge bg-primary">9</span></a></li>
+                                <li role="presentation"><a id="images-tab" href="#images" role="tab" data-toggle="tab" aria-controls="images" aria-expanded="false">Bookmark <span class="badge bg-success">2</span></a></li>
+                                <li role="presentation"><a id="videos-tab" href="#videos" role="tab" data-toggle="tab" aria-controls="videos" aria-expanded="false">On This Day <span class="badge bg-warning">1</span></a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="web" role="tabpanel" aria-labelledby="web-tab" class="tab-pane fade active in">
+                                    <p id="result"></p>
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <h5 class="mb-5">Lorem ipsum dolor sit amet</h5>
+                                            <a href="#">www.bing.com</a>
+                                            <div class="row">
+                                                <div class="col-sm-8 col-md-8">
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                                    </p>
+                                                </div>
+                                                <div class="col-sm-4 col-md-4">
+                                                    <div class="thumbnail">
+                                                        <a href="{{ MEDIA_URL }}/build/images/backgrounds/30.jpg" title="Wallpaper 01"><img src="{{ MEDIA_URL }}/build/images/backgrounds/30.jpg" alt="" class="img-responsive"></a>
+                                                        <div class="text-right caption">
+                                                            <ul class="list-inline mb-0">
+                                                                <li><i class="ti-comment text-info"></i> 12</li>
+                                                                <li><i class="ti-heart text-danger"></i> 324</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </li>
+                                        <li>
+                                            <h5 class="mb-5">Lorem ipsum dolor sit amet</h5>
+                                            <a href="#">www.bing.com</a>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </p>
+                                            <hr>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="images" role="tabpanel" aria-labelledby="images-tab" class="tab-pane fade">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <h5 class="mb-5">Lorem ipsum dolor sit amet</h5>
+                                            <a href="#">www.bing.com</a>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </p>
+                                            <hr>
+                                        </li>
+                                        <li>
+                                            <h5 class="mb-5">Lorem ipsum dolor sit amet</h5>
+                                            <a href="#">www.bing.com</a>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </p>
+                                            <hr>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="videos" role="tabpanel" aria-labelledby="videos-tab" class="tab-pane fade">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <h5 class="mb-5">Lorem ipsum dolor sit amet</h5>
+                                            <a href="#">www.bing.com</a>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </p>
+                                            <hr>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <nav>
+                                <ul class="pagination">
+                                    <li class="disabled pagination-prev"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                                    <li><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li class="active"><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li class="pagination-next"><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="widget">
+                    <div class="widget-heading">
+                        <h3 class="widget-title">Recent Activities</h3>
+                    </div>
+                    <div class="widget-body">
+                        <ul class="activity-list activity-sm list-unstyled mb-0">
+                            <li class="activity-purple">
+                                <time datetime="2015-12-10T20:50:48+07:00" class="fs-12 text-muted">9 minutes ago</time>
+                                <p class="mt-10 mb-0">You <span class="label label-success">recommended</span> Karen Ortega</p>
+                            </li>
+                            <li class="activity-danger">
+                                <time datetime="2015-12-10T20:42:40+07:00" class="fs-12 text-muted">15 minutes ago</time>
+                                <p class="mt-10 mb-0">You followed Olivia Williamson</p>
+                            </li>
+                            <li class="activity-warning">
+                                <time datetime="2015-12-10T20:35:35+07:00" class="fs-12 text-muted">22 minutes ago</time>
+                                <p class="mt-10 mb-0">You <span class="text-danger">subscribed</span> to Harold Fuller</p>
+                            </li>
+                            <li class="activity-success">
+                                <time datetime="2015-12-10T20:27:48+07:00" class="fs-12 text-muted">30 minutes ago</time>
+                                <p class="mt-10 mb-0">You updated your profile picture</p>
+                            </li>
+                            <li class="activity-primary">
+                                <time datetime="2015-12-10T20:22:48+07:00" class="fs-12 text-muted">35 minutes ago</time>
+                                <p class="mt-10 mb-0">You deleted homepage.psd</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="widget">
+                    <div class="widget-heading">
+                        <h3 class="widget-title">Friend List</h3>
+                    </div>
+                    <div class="widget-body">
+                        <ul class="media-list mb-0">
+                            <li class="media">
+                                <a href="javascript:;" class="conversation-toggle">
+                                    <div class="media-left avatar"><img src="{{ MEDIA_URL }}build/images/users/10.jpg" alt="" class="media-object img-circle"><span class="status bg-success"></span></div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Philip Fernandez</h5>
+                                        <p class="text-muted mb-0">489 Rhapsody Street</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;" class="conversation-toggle">
+                                    <div class="media-left avatar"><img src="{{ MEDIA_URL }}build/images/users/20.jpg" alt="" class="media-object img-circle"><span class="status bg-success"></span></div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Mary Carr</h5>
+                                        <p class="text-muted mb-0">3611 West Fork Drive</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;" class="conversation-toggle">
+                                    <div class="media-left avatar"><img src="{{ MEDIA_URL }}build/images/users/11.jpg" alt="" class="media-object img-circle"><span class="status bg-danger"></span></div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Joseph Salazar</h5>
+                                        <p class="text-muted mb-0">4489 Hart Ridge Road</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;" class="conversation-toggle">
+                                    <div class="media-left avatar"><img src="{{ MEDIA_URL }}build/images/users/06.jpg" alt="" class="media-object img-circle"><span class="status bg-warning"></span></div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">John Cruz</h5>
+                                        <p class="text-muted mb-0">3274 Lyndon Street</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <a href="javascript:;" class="conversation-toggle">
+                                    <div class="media-left avatar"><img src="{{ MEDIA_URL }}build/images/users/19.jpg" alt="" class="media-object img-circle"><span class="status bg-success"></span></div>
+                                    <div class="media-body">
+                                        <h5 class="media-heading">Jacqueline Rios</h5>
+                                        <p class="text-muted mb-0">559 Holly Street</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="media">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Search for..." class="form-control"><span class="input-group-btn">
+                                    <button type="button" class="btn btn-outline btn-default"><i class="zmdi zmdi-search"></i></button></span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">2017 &copy;  <a href="/">EduRe</a> by <a href="https://voidsolution.com" target="_blank">Voidsolution.</a></div>
+    </div>
+    <!-- Right Sidebar start-->
+    {% include 'sidebar_right.html' %}
+    <!-- Right Sidebar end-->
+</div>
+{% endblock %}

@@ -1,0 +1,408 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+{% block js %}
+<script type="text/javascript">
+    function save_folder(e) {
+        if(e.which == 13) {
+            var folder_name = $('input[name=new_folder]').val();
+                      $.ajax({
+                          type:"POST",
+                          cache:false,
+                          data:{
+                              "csrfmiddlewaretoken":"{{csrf_token}}",
+                              "folder_name":folder_name,
+                              "type":"{% if 'file_manager/dropbox/' in request.META.PATH_INFO %}dropbox{% endif %}{% if 'file_manager/drive/' in request.META.PATH_INFO %}drive{% endif %}{% if 'file_manager/library/' in request.META.PATH_INFO %}library{% endif %}",
+                              "parent":"{{ parent.id }}"
+                          },
+                          url:"{% url 'storage' %}",
+                          beforeSend:function(){
+                          },
+                          success:function(resp){
+                              if (resp['status']) {
+                                  window.location.reload();
+                              } else {
+                                  alert(resp['msg']);
+                              }
+                          }
+                      });
+        }
+    }
+    function rename_save(e, obj) {
+        if(e.which == 13) {
+            var filename = $(obj).val();
+                      $.ajax({
+                          type:"POST",
+                          cache:false,
+                          data:{
+                              "csrfmiddlewaretoken":"{{csrf_token}}",
+                              "id":$(obj).attr('key'),
+                              "filename":filename,
+                              "parent":"{{ parent.id }}"
+                          },
+                          url:"{% url 'storage' %}",
+                          beforeSend:function(){
+                          },
+                          success:function(resp){
+                              if (resp['status']) {
+                                  window.location.reload();
+                              } else {
+                                  alert(resp['msg']);
+                              }
+                          }
+                      });
+        }
+    }
+
+    function delete_action() {
+                      $.ajax({
+                          type:"POST",
+                          cache:false,
+                          data:{
+                              "csrfmiddlewaretoken":"{{csrf_token}}",
+                              "delete_file":$('input[name=delete_file]').val()
+                          },
+                          url:"{% url 'storage' %}",
+                          beforeSend:function(){
+                          },
+                          success:function(resp){
+                              if (resp['status']) {
+                                  window.location.reload();
+                              } else {
+                                  alert(resp['msg']);
+                              }
+                          }
+                      });
+    }
+    function delete_file(id, name) {
+        $('.bs-example-modal').modal('show');
+        $('.bs-example-modal #file_name').text(name);
+        $('input[name=delete_file]').val(id);
+    }
+    function rename(id) {
+        var prev_value = $('.filename_'+id).text();
+        prev_value = prev_value.split('.docx')[0];
+        $('.filename_'+id).hide();
+        $('.rename_'+id).show();
+        $('.rename_'+id+' input[name=rename]').val(prev_value);
+    }
+
+    function new_folder() {
+        $('#file_body').prepend('<tr><td><a href="#"><i class="fa fa-folder-o"></i> <input type="text" style="width:80%;" onkeypress="save_folder(event);" class="form-control" name="new_folder" autofocus /></a></td><td></td><td></td><td></td></tr>');
+    }
+
+    function new_word() {
+        $('.word-modal').modal('show');
+    }
+    function new_excel() {
+        $('.excel-modal').modal('show');
+    }
+    function new_ppt() {
+        $('.ppt-modal').modal('show');
+    }
+
+    function open_word(key, type) {
+                      $.ajax({
+                          type:"POST",
+                          cache:false,
+                          data:{
+                              "csrfmiddlewaretoken":"{{csrf_token}}"
+                          },
+                          url:"{% url 'word_processing' %}"+key,
+                          beforeSend:function(){
+
+                          },
+                          success:function(resp){
+                            if (type == 'docx') {
+                                $('.word-modal').modal('hide');
+                            }
+                            if (type == 'xlsx') {
+                                $('.excel-modal').modal('hide');
+                            }
+                            if (type == 'pptx') {
+                                $('.ppt-modal').modal('hide');
+                            }
+
+                              $('.office').modal('show');
+                              $('.office .office_render').html(resp);
+                          }
+                      });
+
+    }
+
+    function save_word(type) {
+        if (type == 'docx') {
+            var filename = $('input[name=word_file]').val();
+        }
+        if (type == 'xlsx') {
+            var filename = $('input[name=excel_file]').val();
+        }
+        if (type == 'pptx') {
+            var filename = $('input[name=ppt_file]').val();
+        }
+
+        if (filename) {
+                      $.ajax({
+                          type:"POST",
+                          cache:false,
+                          data:{
+                              "csrfmiddlewaretoken":"{{csrf_token}}",
+                              "parent":"{{ parent.id }}",
+                              "filename":filename,
+                              "type":type
+                          },
+                          url:"{% url 'word_processing' %}",
+                          beforeSend:function(){
+                            if (type == 'docx') {
+                                $('.word-modal').modal('hide');
+                            }
+                            if (type == 'xlsx') {
+                                $('.excel-modal').modal('hide');
+                            }
+                            if (type == 'pptx') {
+                                $('.ppt-modal').modal('hide');
+                            }
+
+                          },
+                          success:function(resp){
+                              $('.word-modal').modal('hide');
+                              $('.office').modal('show');
+                              $('.office .office_render').html(resp);
+                          }
+                      });
+        } else {
+            alert('please fill word file name');
+        }
+
+    }
+
+    $(document).ready(function(){
+        sweetAlertInitialize();
+        {% if err %}
+            swal({
+                title: "Warning!",
+                text: "{{ err }}",
+                type: "error",
+                confirmButtonClass: "btn-raised btn-primary",
+                confirmButtonText: "OK"
+            });
+        {% endif %}
+        {% if success %}
+            swal({
+                title: "Saved!",
+                text: "Saved changes",
+                type: "success",
+                confirmButtonClass: "btn-raised btn-primary",
+                confirmButtonText: "OK"
+            });
+        {% endif %}
+        $("#example-1").dataTable({
+            "order": [[ 0, "desc" ]]
+        });
+
+        document.getElementById("file_library").onchange = function() {
+            $("form#library_form").submit();
+        };
+
+    });
+</script>
+{% endblock %}
+{% block css %}
+<style>
+    .rename {display:none;}
+    input[type=file] {
+    cursor:pointer; opacity: 0.0; position: absolute; top:0; left: 0; bottom: 0; right:0; width: 100%; height:100%;
+    }
+</style>
+{% endblock %}
+{% block body %}
+<div class="main-container">
+    <!-- Main Sidebar start-->
+    {% include 'sidebar.html' %}
+    <!-- Main Sidebar end-->
+    <div class="page-container">
+        <div class="page-header clearfix">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="mt-0 mb-5">File Manager</h4>
+                    <p class="text-muted mb-0">Home</p>
+                </div>
+            </div>
+        </div>
+        <div class="page-content container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="widget">
+                                <div class="widget-body">
+                                    <div class="list-group">
+                                        <a href="{% url 'file_manager_library' %}" class="list-group-item{% if 'file_manager/library/' in request.META.PATH_INFO %} active{% endif %}"><i class="zmdi zmdi-collection-text"></i> Library</a>
+                                        <a href="{% url 'file_manager_drive' %}" class="list-group-item{% if 'file_manager/drive/' in request.META.PATH_INFO %} active{% endif %}"><i class="zmdi zmdi-google-drive"></i> Google Drive</a>
+                                        <a href="{% url 'file_manager_dropbox' %}" class="list-group-item{% if 'file_manager/dropbox/' in request.META.PATH_INFO %} active{% endif %}"><i class="zmdi zmdi-dropbox"></i> Dropbox</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="widget">
+                                <div class="widget-heading">
+                                    <h3 class="widget-title">{% if breadcumb %}{% autoescape off %}{{ breadcumb }}{% endautoescape %}{% else %}{{ file_manager_title }}{% endif %}</h3>
+                                    <div style="text-align:right;">
+                                        <div class="btn-group mr-10">
+                                            <div style="overflow:hidden;" class="btn btn-primary"{% if 'file_manager/dropbox/' in request.META.PATH_INFO %} id="dropbox"{% endif %}{% if 'file_manager/drive/' in request.META.PATH_INFO %} id="drive"{% endif %}{% if 'file_manager/library/' in request.META.PATH_INFO %} id="library"{% endif %}>{% if 'file_manager/library/' in request.META.PATH_INFO %}
+                                            <form method="POST" action="{% url 'storage' %}" id="library_form" enctype="multipart/form-data">{% csrf_token %}<input type="hidden" name="parent" value="{{ parent.id }}" /><input id="file_library" type="file" name="file_library" /></form>
+                                            {% endif %}New Upload
+                                        </div>
+                                        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-primary dropdown-toggle"><span class="caret"></span><span class="sr-only">Toggle Dropdown</span></button>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#"><i class="ti-file"></i> File Upload</a></li>
+                                            <li onclick="new_folder();"><a href="#"><i class="ti-folder"></i> New Folder</a></li>
+                                            <li>
+                                                <a href="#"><i class="ti-link"></i> Link</a>
+                                            </li>
+                                            {% if 'file_manager/library/' in request.META.PATH_INFO %}
+                                            <li><hr></li>
+                                            <li onclick="new_word();"><a href="#"><i class="fa fa-file-word-o"></i> Word</a></li>
+                                            <li onclick="new_excel();"><a href="#"><i class="fa fa-file-excel-o"></i> Excel</a></li>
+                                            <li onclick="new_ppt();"><a href="#"><i class="fa fa-file-powerpoint-o"></i> Powerpoint</a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget-body">
+                                <table id="example-1" cellspacing="0" width="100%" class="table table-striped table-bordered" style="margin-top:20px;">
+                                    <thead>
+                                        <tr>
+                                            <th style="display:none;"></th>
+                                            <th>Name</th>
+                                            <th>Size</th>
+                                            <th>Modified Date</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="file_body">
+                                        {% for i in file_list %}
+                                        <tr>
+                                            <td style="display:none;">{{ i.id }}</td>
+                                            <td>
+                                                <div class="filename filename_{{ i.id }}">{% if i.ext %}<a style="cursor:pointer;" onclick="open_word('{{ i.token }}', '{{ i.ext }}');">{% if i.ext == 'docx' %}<i class="fa fa-file-word-o"></i>{% endif %}{% if i.ext == 'xlsx' %}<i class="fa fa-file-excel-o"></i>{% endif %}{% if i.ext == 'pptx' %}<i class="fa fa-file-powerpoint-o"></i>{% endif %} {{ i.name }}{% if i.ext %}.{{ i.ext }}{% endif %}</a>{% else %}<a href="{% if i.isDir %}{% if 'file_manager/dropbox/' in request.META.PATH_INFO %}{% url 'file_manager_dropbox' key=i.id %}{% endif %}{% if 'file_manager/drive/' in request.META.PATH_INFO %}{% url 'file_manager_drive' key=i.id %}{% endif %}{% if 'file_manager/library/' in request.META.PATH_INFO %}{% url 'file_manager_library' key=i.id %}{% endif %}{% else %}{% if i.ext == 'docx' %}{% else %}{% if i.files %}{{ i.files.url }}{% else %}{{ i.link }}{% endif %}{% endif %}{% endif %}"{% if not i.isDir %} target="_blank"{% endif %}>{% if i.isDir %}<i class="fa fa-folder"></i>{% else %}<i class="fa fa-file-o"></i>{% endif %} {{ i.name }}{% if i.ext %}.{{ i.ext }}{% endif %}</a>{% endif %}</div>
+                                                <div class="rename rename_{{ i.id }}"><i class="fa fa-file-o"></i> <input style="width:80%;" type="text" key="{{ i.id }}" onkeypress="rename_save(event, this);" class="form-control" name="rename" autofocus /></div>
+                                            </td>
+                                            <td>{{ i.kb }} kb</td>
+                                            <td>{{ i.timestamp_mod }}</td>
+                                            <td>
+                                                <div role="group" aria-label="Basic example" class="btn-group" style="margin:0 auto;display:block;width:100px;">
+                                                    <button onclick="delete_file('{{ i.id }}', '{{ i.name }}');" data-toggle="tooltip" data-placement="bottom" title="Delete this file/folder" type="button" class="btn btn-raised btn-default"><i class="ti-trash"></i></button>
+                                                    <button onclick="rename('{{ i.id }}');" data-toggle="tooltip" data-placement="bottom" title="Rename this file/folder" type="button" class="btn btn-raised btn-default"><i class="ti-write"></i></button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">2017 &copy;  <a href="/">EduRe</a> by <a href="https://voidsolution.com" target="_blank">Voidsolution.</a></div>
+</div>
+<!-- Right Sidebar start-->
+{% include 'sidebar_right.html' %}
+<!-- Right Sidebar end-->
+</div>
+<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" class="modal fade bs-example-modal">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                <h4 id="myModalLabel" class="modal-title">Are you really want to delete this file/folder?</h4>
+            </div>
+            <div class="modal-body">
+                <p id="file_name"></p>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" name="delete_file" />
+                <button type="button" data-dismiss="modal" class="btn btn-raised btn-default">Cancel</button>
+                <div onclick="delete_action();" type="button" class="btn btn-raised btn-black">Yes</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" class="modal fade word-modal">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                <h4 id="myModalLabel" class="modal-title"><i class="fa fa-file-word-o"></i> Please fill name of your word document file</h4>
+            </div>
+
+            <div class="modal-body">
+                <input type="text" name="word_file" class="form-control" style="width:80%;display:inline-block;" /><span> .docx</span>
+            </div>
+
+            <div class="modal-footer">
+                <input type="hidden" name="delete_file" />
+                <button type="button" data-dismiss="modal" class="btn btn-raised btn-default">Cancel</button>
+                <div onclick="save_word('docx');" type="button" class="btn btn-raised btn-black">Save & Write New</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" class="modal fade excel-modal">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                <h4 id="myModalLabel" class="modal-title"><i class="fa fa-file-excel-o"></i> Please fill name of your spreadsheet document file</h4>
+            </div>
+
+            <div class="modal-body">
+                <input type="text" name="excel_file" class="form-control" style="width:80%;display:inline-block;" /><span> .xlsx</span>
+            </div>
+
+            <div class="modal-footer">
+                <input type="hidden" name="delete_file" />
+                <button type="button" data-dismiss="modal" class="btn btn-raised btn-default">Cancel</button>
+                <div onclick="save_word('xlsx');" type="button" class="btn btn-raised btn-black">Save & Write New</div>
+            </div>
+        </div>
+    </div>
+</div><div tabindex="-1" role="dialog" aria-labelledby="myModalLabel" class="modal fade ppt-modal">
+    <div role="document" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                <h4 id="myModalLabel" class="modal-title"><i class="fa fa-file-powerpoint-o"></i> Please fill name of your presentation document file</h4>
+            </div>
+
+            <div class="modal-body">
+                <input type="text" name="ppt_file" class="form-control" style="width:80%;display:inline-block;" /><span> .pptx</span>
+            </div>
+
+            <div class="modal-footer">
+                <input type="hidden" name="delete_file" />
+                <button type="button" data-dismiss="modal" class="btn btn-raised btn-default">Cancel</button>
+                <div onclick="save_word('pptx');" type="button" class="btn btn-raised btn-black">Save & Write New</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                  <div tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" class="modal fade office">
+                    <div role="document" class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-body office_render" style="height:500px;">
+
+                        </div>
+                        <div class="modal-footer">
+                          <div onclick="window.location.reload();" class="btn btn-raised btn-default">Close</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+{% endblock %}
