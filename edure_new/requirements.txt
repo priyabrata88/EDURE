@@ -49,7 +49,7 @@ django-storages==1.6.5
 django-tinymce==2.3.0
 django-user-agents==0.3.2
 django-wysiwyg==0.7.1
-djangorestframework==3.7.3
+djangorestframework==3.11.2
 djorm-ext-pgfulltext==0.10
 docutils==0.14
 dropbox==8.5.0
